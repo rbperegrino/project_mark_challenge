@@ -1,1 +1,32 @@
-<p>checkbox works!</p>
+<div
+  [class.checked]="props.checked"
+  [class.hover:bg-gray-300]="!props.checked"
+  class="relative flex gap-2 items-center mb-4 w-52 h-12 px-3.5 border rounded-lg"
+>
+  <input (change)="check()"
+         [checked]="props.checked"
+         class="form-checkbox
+                w-5
+                h-5
+                text-blue-600
+                border-2
+                border-gray-200
+                rounded-md
+                checked:border-none
+                focus:border-none
+                focus:ring-offset-0
+                hover:cursor-pointer"
+         id="default-checkbox"
+         type="checkbox"
+         value=""
+  >
+  <label
+    class="ms-2
+           text-sm
+           font-medium
+           text-gray-800"
+    for="default-checkbox"
+  >
+    {{props.title}}
+  </label>
+</div>
