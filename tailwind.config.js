@@ -8,6 +8,9 @@ module.exports = {
       fontFamily              : {
         archivo: '"Archivo", "sans-serif"',
         archivonarrow: '"Archivo Narrow", "sans-serif"',
+      },
+      transitionProperty: {
+        'height': 'height'
       }
     },
   },

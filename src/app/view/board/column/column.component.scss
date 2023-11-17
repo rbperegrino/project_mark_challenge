@@ -1,0 +1,44 @@
+app-board-column {
+  input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 114px;
+    height: 22px;
+    background: #E9D9FF;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+
+  label:after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 42px;
+    height: 22px;
+    background: #DABFFF;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+  input:checked + label {
+    background: #DABFFF;
+  }
+
+  input:checked + label:after {
+    left: 100%;
+    transform: translateX(-100%);
+    background: #E9D9FF;
+  }
+
+  label:active:after {
+    width: 130px;
+  }
+}
