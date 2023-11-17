@@ -1,0 +1,7 @@
+<div class="w-full mt-12 flex justify-center items-center gap-6">
+  <app-checkbox
+    (checkedItemEvent)="checkType(boardType.id)"
+    *ngFor="let boardType of boardTypes()"
+    [props]="boardType">
+  </app-checkbox>
+</div>

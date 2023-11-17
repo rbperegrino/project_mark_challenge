@@ -1,4 +1,4 @@
-<header class="w-full flex flex-row justify-between py-[21px]">
+<header class="w-full flex flex-row justify-between items-center py-[21px]">
   <div class="logo w-10">
     <svg fill="none" height="38" viewBox="0 0 38 38" width="38" xmlns="http://www.w3.org/2000/svg">
       <path clip-rule="evenodd" d="M22.757 1.75736L35.2714 14.2717C37.6145 16.6149 37.6145 20.4139 35.2714 22.757L22.757 35.2714C20.4139 37.6145 16.6149 37.6145 14.2717 35.2714L1.75736 22.757C-0.585786 20.4139 -0.585787 16.6149 1.75736 14.2717L14.2717 1.75736C16.6149 -0.585786 20.4139 -0.585786 22.757 1.75736Z" fill="#1B3E67" fill-rule="evenodd"/>
@@ -12,13 +12,13 @@
           [class.bg-white]="!step.active"
           [class.border-none]="step.active"
           [class.text-white]="step.active"
-          class="h-14 w-14 border bg-gray-800 rounded-2xl inline-block flex items-center justify-center font-archivo text-lg border-[#BFCFE0]"
+          class="h-14 w-14 border border-gray-100 bg-gray-800 rounded-2xl inline-block flex items-center justify-center font-archivo text-lg"
         >{{step.step}}</div>
         <p class="text-[10px] mt-[3px] font-archivonarrow text-gray-800 font-bold">{{step.title}}</p>
       </div>
 
   </div>
   <div class="justify-self-end flex flex-col justify-center items-center mr-10">
-    <button class="font-archivo font-bold text-white rounded-full bg-[#2462D1] px-[21px] py-[13px] text-sm">Next</button>
+    <button class="font-archivo font-bold text-white rounded-full bg-blue-500 px-[21px] py-[13px] text-sm">Next</button>
   </div>
 </header>

@@ -1,0 +1,77 @@
+$base-color: theme('colors.blue.500');
+$bg-color: white;
+$spacing: 10px;
+
+app-checkbox {
+    .checked {
+      border: 2px solid $base-color;
+      //animation: border 1s ease 1 forwards;
+      //box-shadow:
+      //  -210px -50px 0 10px $bg-color,
+      //  210px -50px 0 10px $bg-color,
+      //  //210px 50px 0 2px $bg-color,
+      //  //-210px 50px 0 2px $bg-color,
+      //  0 0 0 2px $base-color;
+
+      ::before,::after {
+        content: "";
+        position: absolute;
+        left: 48%;
+        top: 100%;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        border-top-color: $base-color;
+        clear: both;
+      }
+      ::after {
+        top: 93%;
+        border-top-color: white;
+      }
+    }
+}
+
+
+@keyframes border {
+  0% {
+    box-shadow:
+      -105px -50px 0 2px $bg-color,
+      105px -50px 0 2px $bg-color,
+      105px 2px 0 2px $bg-color,
+      -105px 2px 0 2px $bg-color,
+      0 0 0 2px $base-color;
+  }
+  25% {
+    box-shadow:
+      -210px -50px 0 -100px $bg-color,
+      210px -50px 0 -100px $bg-color,
+      105px 2px 0 2px $bg-color,
+      -105px 2px 0 2px $bg-color,
+      0 0 0 2px $base-color;
+  }
+  50% {
+    box-shadow:
+      -210px -50px 0 -100px $bg-color,
+      210px -50px 0 -100px $bg-color,
+      105px 48px 0 2px $bg-color,
+      -105px 48px 0 2px $bg-color,
+      0 0 0 2px $base-color;
+  }
+  75% {
+    box-shadow:
+      -210px -50px 0 -100px $bg-color,
+      210px -50px 0 -100px $bg-color,
+      105px 50px 0 2px $bg-color,
+      -105px 50px 0 2px $bg-color,
+      0 0 0 2px $base-color;
+  }
+  100% {
+    box-shadow:
+      -210px -50px 0 -100px $bg-color,
+      210px -50px 0 -100px $bg-color,
+      210px 50px 0 2px $bg-color,
+      -210px 50px 0 2px $bg-color,
+      0 0 0 2px $base-color;
+  }
+
+}
