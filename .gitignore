@@ -42,4 +42,5 @@ testem.log
 Thumbs.db
 
 .firebase
+.nx
 firebase-debug.log

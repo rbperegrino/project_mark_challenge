@@ -22,4 +22,8 @@ I made the decision to use different approaches and technologies to show my skil
   - I could take a time to implement the state handling with Signals but I prefer to use RxJs to show more skills
 - Used Firebase Hosting to host the project
 
+## Live Demo
+
+The app is running in https://projectmark-4baf5.web.app/
+
    
