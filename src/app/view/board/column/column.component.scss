@@ -1,0 +1,59 @@
+$columns: 'lead', 'rfp', 'submitted', 'won', 'lost', 'closed';
+
+app-board-column {
+  input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 114px;
+    height: 22px;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 42px;
+      height: 22px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    &:active:after{
+      width: 130px;
+    }
+
+    @each $column in $columns {
+      &.#{$column} {
+        background: theme('colors.#{$column}.200');
+        &:after {
+          background: theme('colors.#{$column}.300');
+        }
+      }
+    }
+  }
+
+  input:checked {
+    + label {
+      @each $column in $columns {
+        &.#{$column} {
+          background: theme('colors.#{$column}.300');
+          &:after {
+            left: 100%;
+            transform: translateX(-100%);
+            background: theme('colors.#{$column}.200');
+          }
+        }
+      }
+    }
+  }
+
+}

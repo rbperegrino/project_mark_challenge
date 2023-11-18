@@ -3,7 +3,9 @@
 
     <app-board-filter (selectedFilterEvent)="selectType($event)"></app-board-filter>
 
-    <div class="block h30">
-      {{selectedType()}}
+
+    <div class="min-h-[600px] mt-16 px-40 flex justify-center gap-4">
+      <app-board-column *ngFor="let column of columns()" [props]="column" class="w-[222px]"></app-board-column>
     </div>
+
 </div>

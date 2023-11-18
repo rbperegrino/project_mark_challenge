@@ -1,0 +1,39 @@
+<div
+  [ngClass]="classes()"
+  class="w-full
+         flex
+         flex-col
+         gap-1
+         px-1
+         py-4
+         rounded-xl
+         overflow-hidden
+         transition-height
+         duration-1000"
+>
+  <div class="ml-2">
+    <h3
+      [ngClass]="titleClasses"
+      class="text-sm
+           font-bold
+           uppercase"
+    >
+      {{props.title}}
+    </h3>
+    <div class="toggle -mt-4 ml-1">
+      <input (change)="check()" [id]="'switch-'+props.id" class="peer" type="checkbox" />
+      <label [class]="props.id" [for]="'switch-'+props.id">Toggle</label>
+    </div>
+  </div>
+  <div
+    [ngClass]="boxClasses"
+    class="h-[175px]
+           mt-2
+           w-full
+           h-100
+           border
+           rounded-lg"
+  >
+
+  </div>
+</div>

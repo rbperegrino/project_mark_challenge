@@ -46,5 +46,11 @@
   ],
   "extends": [
     "plugin:storybook/recommended"
-  ]
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "env": {
+    "es6": true
+  }
 }
