@@ -1,5 +1,6 @@
 import {CommonModule} from '@angular/common';
-import {Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
+import {Component, inject, Input, ViewEncapsulation} from '@angular/core';
+import {BoardFacade} from "../../../domain/facade/board.facade";
 import {BoardType} from "../../../domain/models/board-type.model";
 
 @Component({
@@ -13,7 +14,6 @@ import {BoardType} from "../../../domain/models/board-type.model";
 export class CheckboxComponent {
   @Input({required: true}) props!: BoardType;
 
-  @Output() checkedItemEvent = new EventEmitter<string>()
-
-  check = () => this.checkedItemEvent.emit(this.props.id)
+  private _boardFacade = inject(BoardFacade)
+  check = () => this._boardFacade.selectBoardType(this.props.id)
 }

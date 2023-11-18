@@ -1,6 +1,7 @@
 import {CommonModule} from '@angular/common';
-import {Component, signal} from '@angular/core';
-import {boardColumnsByTypeMock, boardColumnsMock} from "../../domain/mocks/board-columns.mock";
+import {Component, inject} from '@angular/core';
+import {takeUntilDestroyed, toSignal} from "@angular/core/rxjs-interop";
+import {BoardFacade} from "../../domain/facade/board.facade";
 import {ColumnComponent} from "./column/column.component";
 import {FilterComponent} from "./filter/filter.component";
 
@@ -12,13 +13,16 @@ import {FilterComponent} from "./filter/filter.component";
   styleUrl: './board.component.scss'
 })
 export class BoardComponent {
-  selectedType = signal('')
-  columns = signal( boardColumnsMock)
 
-  selectType(value: string) {
-    if(!value) return
-    this.columns.set(boardColumnsMock.filter(board => boardColumnsByTypeMock.get(value)?.includes(board.id) ))
-  }
+
+  private _boardFacade = inject(BoardFacade)
+  columns = toSignal(this._boardFacade.columns$.pipe(takeUntilDestroyed()))
+
+  //
+  // selectType(value: string) {
+  //   if(!value) return
+  //   this._boardFacade.selectBoardType(value)
+  // }
 
 
 }
