@@ -19,7 +19,7 @@ module.exports = {
       },
       blue: {
         ...colors.blue,
-        600: '#2462D1'
+        600: '#2462D1',
       },
       'lead': {
         100: '#F7F1FF',

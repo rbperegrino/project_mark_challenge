@@ -4,20 +4,13 @@ $spacing: 10px;
 
 app-checkbox {
     .checked {
-      border: 2px solid $base-color;
-      //animation: border 1s ease 1 forwards;
-      //box-shadow:
-      //  -210px -50px 0 10px $bg-color,
-      //  210px -50px 0 10px $bg-color,
-      //  //210px 50px 0 2px $bg-color,
-      //  //-210px 50px 0 2px $bg-color,
-      //  0 0 0 2px $base-color;
+      animation: border .3s ease 1 forwards;
 
       ::before,::after {
         content: "";
         position: absolute;
         left: 48%;
-        top: 100%;
+        top: 103%;
         width: 0;
         height: 0;
         border: 8px solid transparent;
@@ -25,7 +18,7 @@ app-checkbox {
         clear: both;
       }
       ::after {
-        top: 93%;
+        top: 97%;
         border-top-color: white;
       }
     }
