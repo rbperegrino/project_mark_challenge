@@ -1,5 +1,6 @@
 import {CommonModule} from '@angular/common';
-import {Component, computed, signal, ViewEncapsulation} from '@angular/core';
+import {Component, computed, Input, OnInit, signal, ViewEncapsulation} from '@angular/core';
+import {ColumnType} from "../../../domain/models/column-type.model";
 
 @Component({
   selector: 'app-board-column',
@@ -9,17 +10,21 @@ import {Component, computed, signal, ViewEncapsulation} from '@angular/core';
   styleUrl: './column.component.scss',
   encapsulation: ViewEncapsulation.None
 })
-export class ColumnComponent {
+export class ColumnComponent implements OnInit {
+  @Input({required: true}) props!: ColumnType
   checked = signal(true)
+
   classes = computed( () =>[
-   this.checked() ? 'bg-gradient-to-b from-lead-100 from-60% to-white h-full'  : 'bg-lead-100 h-[85px]',
+   this.checked() ? `bg-gradient-to-b from-${this.props?.id}-100 via-${this.props?.id}-100 via-30% from-20% to-white h-full`  : `bg-${this.props?.id}-100 h-[75px]`,
   ])
-  titleClasses = ['text-lead-400']
-  boxClasses = ['border-lead-200']
-  title = 'Lead'
 
+  titleClasses: string[] = []
+  boxClasses: string[] = []
 
-  check = () => this.checked.update(value => {
-    return !value;
-  })
+  ngOnInit() {
+    this.titleClasses = [`text-${this.props?.id}-400`]
+    this.boxClasses = [`border-${this.props?.id}-200`]
+  }
+
+  check = () => this.checked.update(value => !value)
 }

@@ -4,23 +4,26 @@
          flex
          flex-col
          gap-1
-         p-4
+         px-1
+         py-4
          rounded-xl
          overflow-hidden
          transition-height
          duration-1000"
 >
-  <h3
-    [ngClass]="titleClasses"
-    class="text-md
+  <div class="ml-2">
+    <h3
+      [ngClass]="titleClasses"
+      class="text-sm
            font-bold
            uppercase"
     >
-    {{title}}
-  </h3>
-  <div class="toggle -mt-4">
-    <input (change)="check()" class="" id="switch" type="checkbox" />
-    <label for="switch">Toggle</label>
+      {{props.title}}
+    </h3>
+    <div class="toggle -mt-4 ml-1">
+      <input (change)="check()" [id]="'switch-'+props.id" class="peer" type="checkbox" />
+      <label [class]="props.id" [for]="'switch-'+props.id">Toggle</label>
+    </div>
   </div>
   <div
     [ngClass]="boxClasses"
